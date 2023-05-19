@@ -1,0 +1,76 @@
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row {
+    display: table-row;
+}
+
+.row.header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.cell {
+    display: table-cell;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+#code-table tr td:nth-child(even) {
+    text-align: left;
+}
+
+.comment {
+    font-style: italic, oblique;
+    color: #2da146;
+}
+
+.command {
+    font-style: oblique;
+    color: #076fac;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    text-align: center;
+    max-width: 18px;
+}
+
+.centered {
+    outline: auto;
+    transform: translate(-50%, -35%);
+    width: 80%;
+    height: 200%;
+    max-width: 800px;
+    max-height: 1050px;
+}
+
+.method-body {
+    padding-inline-start: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .table {
+        display: block;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .cell {
+        display: block;
+    }
+}

@@ -1,0 +1,71 @@
+body {
+    background-color: #003559;
+}
+
+h1 {
+    color: #0a2e70;
+    text-align: center;
+    font-family: serif;
+    font-size: 200%;
+}
+
+.signature {
+    position:fixed; /* Position the element relative to the body */
+    bottom: 5px; /* Adjust the distance from the bottom */
+    right: 5px; /* Adjust the distance from the right */
+}
+
+.signature p {
+    color: #717f9b;
+    font-family: serif;
+    font-size: 100%;
+    text-align: right;
+    margin: 0;
+}
+
+div {
+    margin: auto;
+    text-align: center;
+}
+
+.centered {
+    border: 10px solid #006daa;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    max-width: 800px;
+    max-height: 600px;
+    background-color: #b9d6f2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+    border: none;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.back-button img {
+    transition: filter 0.2s ease-in-out;
+}
+
+.back-button:hover img {
+    filter: sepia(80%);
+}
+
+@media screen and (max-width: 800px) {
+    .centered {
+        width: 130%;
+        height: 100%;
+        max-width: 600px;
+        max-height: 100%;
+        border: 0px;
+        padding: 0px;
+    }
+}

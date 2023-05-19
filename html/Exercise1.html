@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Εμβέλεια μεταβλητών</title>
+    <link rel="stylesheet" type="text/css" href="../css/Global.css">
+    <link rel="stylesheet" type="text/css" href="../css/Exercise1.css">
+    <script type="text/javascript" src="../js/Exercise1.js"></script>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../images/icon_app.ico">
+</head>
+<body>
+    <div class="centered">
+        <h1>Δραστηριότητα 1: Ανακάλυψη εμβέλειας μεταβλητών</h1>
+        <p>Ανακάλυψε το εύρος των μεταβλητών του παρακάτω προγράμματος <br> βρίσκοντας τις τιμές των μεταβλητών στις ακόλουθες γραμμές.<br> Απογορεύεται το 0 ως τιμή μεταβλητής</p>
+        <div class="table">
+            <div class="row header">
+                <div class="cell">ΓΛΩΣΣΑ</div>
+                <div class="cell">Εκτέλεση προγράμματος</div>
+            </div>
+            <div class="row">
+                <div class="cell">
+                        <table id="code-table">
+                            <tr>
+                                <th>Γραμμή</th>
+                                <th>Κώδικας</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="comment">! Πρόγραμμα Eλέγχου εμβέλειας μεταβλητών</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><span class="command">ΠΡΟΓΡΑΜΜΑ</span> Εμβέλεια</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="method-body"><span class="command"> ΑΚΕΡΑΙΕΣ</span>: α, β, γ</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td><span class="command">ΑΡΧΗ</span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή α:'</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> α</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή β:'</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> β</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή γ:'</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> γ</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> '========================= '</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'α', ' -- ', 'β', ' -- ', 'γ'</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> ' '</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> α, ' -- ', β, ' -- ', γ</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> ' '</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td class="method-body"><span class="command">ΚΑΛΕΣΕ</span> διαδ (α, β, γ)</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> α, ' -- ', β, ' -- ', γ</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> ' '</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td class="method-body"><span class="command">ΚΑΛΕΣΕ</span> διαδ (β, γ, α)</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> α, ' -- ', β, ' -- ', γ</td>
+                            </tr>
+                            <tr>
+                                <td>22</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> ' '</td>
+                            </tr>
+                            <tr>
+                                <td>23</td>
+                                <td class="method-body"><span class="command">ΚΑΛΕΣΕ</span> διαδ (γ, α, β)</td>
+                            </tr>
+                            <tr>
+                                <td>24</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> α, ' -- ', β, ' -- ', γ</td>
+                            </tr>
+                            <tr>
+                                <td>25</td>
+                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> ' '</td>
+                            </tr>
+                            <tr>
+                                <td>26</td>
+                                <td><span class="command">ΤΕΛΟΣ_ΠΡΟΓΡΑΜΜΑΤΟΣ</span> Εμβέλεια</td>
+                            </tr>
+                            <tr>
+                                <td>27</td>
+                                <td class="comment">!##### ΔΙΑΔΙΚΑΣΙΑ #####</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td><span class="command">ΔΙΑΔΙΚΑΣΙΑ</span> διαδ (x, y, z)</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td class="method-body"><span class="command">ΑΚΕΡΑΙΕΣ</span>: x, y, z</td>
+                            </tr>
+                            <tr>
+                                <td>31</td>
+                                <td><span class="command">ΑΡΧΗ</span></td>
+                            </tr>
+                            <tr>
+                                <td>32</td>
+                                <td class="method-body">x &#60;-- x - y + z</td>
+                            </tr>
+                            <tr>
+                                <td>33</td>
+                                <td class="method-body">y &#60;-- x * y</td>
+                            </tr>
+                            <tr>
+                                <td>34</td>
+                                <td class="comment">! ΓΡΑΨΕ ' '</td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td><span class="command">ΤΕΛΟΣ_ΔΙΑΔΙΚΑΣΙΑΣ</span></td>
+                            </tr>                            
+                        </table>
+                </div>
+                <div class="cell">
+                    <div class="container">
+                        <form id="form-values">
+                            <table>
+                                <tr>
+                                    <th style="text-align: left;">Terminal</th>
+                                    <th style="text-align: left;"><input type="reset" id="reset" value="Καθαρισμός Πεδίων" ></th>
+                                </tr>
+                                <tr id="terminal1">
+                                    <td colspan="4">Δώσε την μεταβλητή για την τιμή α: </td>
+                                    <td><input class="input-value" type="number" id="a1"></td>
+                                </tr>
+                                <tr id="terminal2">
+                                    <td colspan="4">Δώσε την μεταβλητή για την τιμή β: </td>
+                                    <td><input class="input-value" type="number" id="b1"></td>
+                                </tr>
+                                <tr id="terminal3">
+                                    <td colspan="4">Δώσε την μεταβλητή για την τιμή γ: </td>
+                                    <td><input class="input-value" type="number" id="c1"></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr id="line1">
+                                    <td colspan="5">=========================</td>
+                                </tr>
+                                <tr id="line2">
+                                    <td>α</td>
+                                    <td>--</td>
+                                    <td>β</td>
+                                    <td>--</td>
+                                    <td>γ</td>
+                                </tr>
+                                <tr id="line3">
+                                    <td id="line3-a1">α</td>
+                                    <td>--</td>
+                                    <td id="line3-b1">b</td>
+                                    <td>--</td>
+                                    <td id="line3-c1">γ</td>
+                                </tr>
+                                <tr id="terminal4">
+                                    <td><input class="input-value" type="number" id="a2"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="b2"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="c2"></td>
+                                </tr>
+                                <tr id="terminal5">
+                                    <td><input class="input-value" type="number" id="a3"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="b3"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="c3"></td>
+                                </tr>
+                                <tr id="terminal6">
+                                    <td><input class="input-value" type="number" id="a4"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="b4"></td>
+                                    <td>--</td>
+                                    <td><input class="input-value" type="number" id="c4"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <input type="button" id="check" value="Έλεγχος">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <p id="result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <button class="back-button" type="button" onclick="window.location.href='Main.html'"><img src="../images/back.svg" alt="Back Icon" width="50" height="50"></button>
+    </div>
+    <div class="signature">
+        <p>Created by: Theodoros Koxanoglou, Year: 2023</p>
+    </div>
+</body>
+</html>

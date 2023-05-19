@@ -1,0 +1,5 @@
+back icon: https://creazilla.com/nodes/3431583-back-icon
+
+app icon: https://freeicons.io/ecommerce/business-data-computer-profit-information-icons-icon-popularicons-latesticons-latesticon-popularicon-icon-46206
+
+colors: https://coolors.co/b9d6f2-0a2e70-0353a4-006daa-003559
