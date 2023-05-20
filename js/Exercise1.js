@@ -104,7 +104,7 @@ function checkResults() {
     if (Number(b1.value) != 0 && b1.style.display != 'none') {
         showElementById('terminal3');
         visualValidation(b1);
-    } else if (document.getElementById('terminal2').style.display == 'table-row') {
+    } else if (Number(b1.value) != 0 && document.getElementById('terminal2').style.display == 'table-row') {
         visualError(b1);
         document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
     }
@@ -114,7 +114,7 @@ function checkResults() {
         showElementById('terminal4');
         visualValidation(a2);
     }
-    else if (document.getElementById('terminal3').style.display == 'table-row') {
+    else if ( Number(a2.value) !=0 && document.getElementById('terminal3').style.display == 'table-row') {
         visualError(a2);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
@@ -125,7 +125,7 @@ function checkResults() {
         showElementById('terminal5');
         visualValidation(b2);
     }
-    else if (document.getElementById('terminal4').style.display == 'table-row') {
+    else if (Number(b2.value) != 0 && document.getElementById('terminal4').style.display == 'table-row') {
         visualError(b2);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
@@ -135,7 +135,7 @@ function checkResults() {
         showElementById('terminal6');
         visualValidation(s1);
     }
-    else if (document.getElementById('terminal5').style.display == 'table-row') {
+    else if (Number(s1.value) != 0 && document.getElementById('terminal5').style.display == 'table-row') {
         visualError(s1);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
@@ -145,7 +145,7 @@ function checkResults() {
         showElementById('terminal7');
         visualValidation(a3);
     }
-    else if (document.getElementById('terminal6').style.display == 'table-row') {
+    else if (Number(a3.value) != 0 && document.getElementById('terminal6').style.display == 'table-row') {
         visualError(a3);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
@@ -155,7 +155,7 @@ function checkResults() {
     if (Number(b3.value) == Number(b1.value) && document.getElementById('terminal7').style.display == 'table-row') {
         visualValidation(b3);
     }
-    else if (document.getElementById('terminal7').style.display == 'table-row') {
+    else if (Number(b3.value) != 0 && document.getElementById('terminal7').style.display == 'table-row') {
         visualError(b3);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
