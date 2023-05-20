@@ -22,13 +22,13 @@ function resetInputElement(elementId) {
 }
 
 function showOnlyFirstCommand() {
-    var inputs = ['a1', 'b1', 'a2', 'b2', 's1', 'a3', 'b3'];
+    var inputs = ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 's1', 'a4', 'b4'];
 
     inputs.forEach(function (inputId) {
         resetInputElement(inputId);
     });
 
-    for (var i = 2; i <= 7; i++) {
+    for (var i = 2; i <= 9; i++) {
         hideElementById('terminal' + i);
     }
 }
@@ -73,10 +73,15 @@ function checkResults() {
 
     var a2 = document.getElementById('a2');
     var b2 = document.getElementById('b2');
-    var s1 = document.getElementById('s1');
 
     var a3 = document.getElementById('a3');
     var b3 = document.getElementById('b3');
+
+    var s1 = document.getElementById('s1');
+
+    var a4 = document.getElementById('a4');
+    var b4 = document.getElementById('b4'); 
+
 
     //print the a1 to the p with id result
     document.getElementById('result').innerHTML = Number(a1.value);
@@ -120,33 +125,53 @@ function checkResults() {
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 
-    //check if the s1 is equal to (a1+b1)*2 and if it is equal then show the terminal6
-    if (Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminal5').style.display == 'table-row') {
+    //check if the a4 is equal to 19 and if it is equal then show the terminal6
+    if (Number(a3.value) == 19 && document.getElementById('terminal5').style.display == 'table-row') {
         showElementById('terminal6');
-        visualValidation(s1);
-    }
-    else if (Number(s1.value) != 0 && document.getElementById('terminal5').style.display == 'table-row') {
-        visualError(s1);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
-    }
-
-    //check if the a3 is equal to a1 and if it is equal then show the terminal7
-    if (Number(a3.value) == Number(a1.value) && document.getElementById('terminal6').style.display == 'table-row') {
-        showElementById('terminal7');
         visualValidation(a3);
     }
-    else if (Number(a3.value) != 0 && document.getElementById('terminal6').style.display == 'table-row') {
+    else if (Number(a3.value) != 0 && document.getElementById('terminal5').style.display == 'table-row') {
         visualError(a3);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 
-
-    //check if the b3 is equal to b1 and if it is equal then show the terminal8
-    if (Number(b3.value) == Number(b1.value) && document.getElementById('terminal7').style.display == 'table-row') {
+    //check if the b3 is equal to 3 and if it is equal then show the terminal7
+    if (Number(b3.value) == 3 && document.getElementById('terminal6').style.display == 'table-row') {
+        showElementById('terminal7');
         visualValidation(b3);
     }
-    else if (Number(b3.value) != 0 && document.getElementById('terminal7').style.display == 'table-row') {
+    else if (Number(b3.value) != 0 && document.getElementById('terminal6').style.display == 'table-row') {
         visualError(b3);
+        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+    }
+
+    //check if the s1 is equal to (a1+b1)*2 and if it is equal then show the terminal8
+    if (Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminal7').style.display == 'table-row') {
+        showElementById('terminal8');
+        visualValidation(s1);
+    }
+    else if (Number(s1.value) != 0 && document.getElementById('terminal7').style.display == 'table-row') {
+        visualError(s1);
+        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+    }
+
+    //check if the a4 is equal to a1 and if it is equal then show the terminal9
+    if (Number(a4.value) == Number(a1.value) && document.getElementById('terminal8').style.display == 'table-row') {
+        showElementById('terminal9');
+        visualValidation(a4);
+    }
+    else if (Number(a4.value) != 0 && document.getElementById('terminal8').style.display == 'table-row') {
+        visualError(a4);
+        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+    }
+
+
+    //check if the b4 is equal to b1
+    if (Number(b4.value) == Number(b1.value) && document.getElementById('terminal9').style.display == 'table-row') {
+        visualValidation(b4);
+    } 
+    else if (Number(b4.value) != 0 && document.getElementById('terminal9').style.display == 'table-row') {
+        visualError(b4);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 }
