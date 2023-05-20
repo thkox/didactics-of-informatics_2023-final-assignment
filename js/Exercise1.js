@@ -21,25 +21,18 @@ function resetInputElement(elementId) {
     }
 }
 
-
 function showOnlyFirstCommand() {
-    resetInputElement('a1');
-    resetInputElement('b1');
-    resetInputElement('a2');
-    resetInputElement('b2');
-    resetInputElement('s1');
-    resetInputElement('a3');
-    resetInputElement('b3');
+    var inputs = ['a1', 'b1', 'a2', 'b2', 's1', 'a3', 'b3'];
 
-    hideElementById('terminal2');
-    hideElementById('terminal3');
-    hideElementById('terminal4');
-    hideElementById('terminal5');
-    hideElementById('terminal6');
-    hideElementById('terminal7');
+    inputs.forEach(function (inputId) {
+        resetInputElement(inputId);
+    });
+
+    for (var i = 2; i <= 7; i++) {
+        hideElementById('terminal' + i);
+    }
 }
 
-// This function is called when the reset button is clicked.
 function resetClick() {
     showOnlyFirstCommand();
 }
@@ -54,7 +47,7 @@ function onPageLoad() {
     checkButton.addEventListener('click', checkResults);
 }
 
-window.addEventListener('load', onPageLoad);  // This is the event/method that is called when the page is loaded.
+window.addEventListener('load', onPageLoad);
 
 function visualValidation(inputElement) {
     inputElement.disabled = true;
@@ -68,14 +61,11 @@ function visualError(inputElement) {
 }
 
 function sinartisi(x, y) {
-    var a, b, x, y, z;
-    x = x + y;
-    z = 2 * x;
-    a = 19;
-    b = 3;
-    return x, y, z;
+    var a = 19;
+    var b = 3;
+    var z = 2 * (x + y);
+    return [x, y, z];
 }
-
 
 function checkResults() {
     var a1 = document.getElementById('a1');
@@ -114,14 +104,14 @@ function checkResults() {
         showElementById('terminal4');
         visualValidation(a2);
     }
-    else if ( Number(a2.value) !=0 && document.getElementById('terminal3').style.display == 'table-row') {
+    else if (Number(a2.value) != 0 && document.getElementById('terminal3').style.display == 'table-row') {
         visualError(a2);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 
 
     //check if the b2 is equal to b1 and if it is equal then show the terminal5
-    if (Number(b2.value) == Number(b1.value) && document.getElementById('terminal4') && Number(b1.value) != 0 ) {
+    if (Number(b2.value) == Number(b1.value) && document.getElementById('terminal4') && Number(b1.value) != 0) {
         showElementById('terminal5');
         visualValidation(b2);
     }
