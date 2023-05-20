@@ -25,25 +25,18 @@ function resetInputElement(elementId) {
 function showOnlyFirstCommand() {
     resetInputElement('a1');
     resetInputElement('b1');
-    resetInputElement('c1');
     resetInputElement('a2');
     resetInputElement('b2');
-    resetInputElement('c2');
+    resetInputElement('s1');
     resetInputElement('a3');
     resetInputElement('b3');
-    resetInputElement('c3');
-    resetInputElement('a4');
-    resetInputElement('b4');
-    resetInputElement('c4');
 
     hideElementById('terminal2');
     hideElementById('terminal3');
     hideElementById('terminal4');
     hideElementById('terminal5');
     hideElementById('terminal6');
-    hideElementById('line1');
-    hideElementById('line2');
-    hideElementById('line3');
+    hideElementById('terminal7');
 }
 
 // This function is called when the reset button is clicked.
@@ -74,9 +67,12 @@ function visualError(inputElement) {
     inputElement.style.color = "white";
 }
 
-function diadikasia(x,y,z) {
-    x = x - y + z;
-    y = x * y;
+function sinartisi(x, y) {
+    var a, b, x, y, z;
+    x = x + y;
+    z = 2 * x;
+    a = 19;
+    b = 3;
     return x, y, z;
 }
 
@@ -84,25 +80,18 @@ function diadikasia(x,y,z) {
 function checkResults() {
     var a1 = document.getElementById('a1');
     var b1 = document.getElementById('b1');
-    var c1 = document.getElementById('c1');
 
     var a2 = document.getElementById('a2');
     var b2 = document.getElementById('b2');
-    var c2 = document.getElementById('c2');
+    var s1 = document.getElementById('s1');
 
     var a3 = document.getElementById('a3');
     var b3 = document.getElementById('b3');
-    var c3 = document.getElementById('c3');
 
-    var a4 = document.getElementById('a4');
-    var b4 = document.getElementById('b4');
-    var c4 = document.getElementById('c4');
-    
     //print the a1 to the p with id result
     document.getElementById('result').innerHTML = Number(a1.value);
 
-    
-    //Check if values are correct
+    //check if the a1 is not 0 and if it is not 0 then show the terminal2
     if (Number(a1.value) != 0) {
         showElementById('terminal2');
         visualValidation(a1);
@@ -111,70 +100,63 @@ function checkResults() {
         document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
     }
 
-    if (Number(b1.value) != 0) {
+    //check if the b1 is not 0 and if it is not 0 then show the terminal3
+    if (Number(b1.value) != 0 && b1.style.display != 'none') {
         showElementById('terminal3');
         visualValidation(b1);
-    } else {
+    } else if (document.getElementById('terminal2').style.display == 'table-row') {
         visualError(b1);
         document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
     }
 
-    if (Number(c1.value) != 0) {
-        showElementById('line1');
-        showElementById('line2');
-        showElementById('line3');
-        visualValidation(c1);
-        document.getElementById('line3-a1').innerHTML = Number(a1.value);
-        document.getElementById('line3-b1').innerHTML = Number(b1.value);
-        document.getElementById('line3-c1').innerHTML = Number(c1.value);
+    //check if the a2 is equal to a1 and if it is equal then show the terminal4
+    if (Number(a2.value) == Number(a1.value) && document.getElementById('terminal3').style.display == 'table-row') {
         showElementById('terminal4');
-    }
-    else {
-        visualError(c1);
-        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
-    }
-
-    a2value, b2value, c2value = diadikasia(Number(a1.value), Number(b1.value), Number(c1.value));
-
-    if (Number(a2.value) == a2value && Number(b2.value) == b2value && Number(c2.value) == c2value) {
-        showElementById('terminal5');
         visualValidation(a2);
-        visualValidation(b2);
-        visualValidation(c2);
     }
-    else {
+    else if (document.getElementById('terminal3').style.display == 'table-row') {
         visualError(a2);
+        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+    }
+
+
+    //check if the b2 is equal to b1 and if it is equal then show the terminal5
+    if (Number(b2.value) == Number(b1.value) && document.getElementById('terminal4') && Number(b1.value) != 0 ) {
+        showElementById('terminal5');
+        visualValidation(b2);
+    }
+    else if (document.getElementById('terminal4').style.display == 'table-row') {
         visualError(b2);
-        visualError(c2);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 
-    b3valuea3value, c3value, a3value = diadikasia(Number(b2.value), Number(c2.value), Number(a2.value));
-
-    if (Number(a3.value) == a3value && Number(b3.value) == b3value && Number(c3.value) == c3value) {
+    //check if the s1 is equal to (a1+b1)*2 and if it is equal then show the terminal6
+    if (Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminal5').style.display == 'table-row') {
         showElementById('terminal6');
-        visualValidation(a3);
-        visualValidation(b3);
-        visualValidation(c3);
+        visualValidation(s1);
     }
-    else {
-        visualError(a3);
-        visualError(b3);
-        visualError(c3);
+    else if (document.getElementById('terminal5').style.display == 'table-row') {
+        visualError(s1);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 
-    c4value, a4value, b4value = diadikasia(Number(c3.value), Number(a3.value), Number(b3.value));
-
-    if (Number(a4.value) == a4value && Number(b4.value) == b4value && Number(c4.value) == c4value) {
-        visualValidation(a4);
-        visualValidation(b4);
-        visualValidation(c4);
+    //check if the a3 is equal to a1 and if it is equal then show the terminal7
+    if (Number(a3.value) == Number(a1.value) && document.getElementById('terminal6').style.display == 'table-row') {
+        showElementById('terminal7');
+        visualValidation(a3);
     }
-    else {
-        visualError(a4);
-        visualError(b4);
-        visualError(c4);
+    else if (document.getElementById('terminal6').style.display == 'table-row') {
+        visualError(a3);
+        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+    }
+
+
+    //check if the b3 is equal to b1 and if it is equal then show the terminal8
+    if (Number(b3.value) == Number(b1.value) && document.getElementById('terminal7').style.display == 'table-row') {
+        visualValidation(b3);
+    }
+    else if (document.getElementById('terminal7').style.display == 'table-row') {
+        visualError(b3);
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 }
