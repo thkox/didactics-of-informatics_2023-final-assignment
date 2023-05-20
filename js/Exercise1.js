@@ -30,8 +30,8 @@ function showOnlyFirstCommand() {
             hideElementById('terminal' + inputId);
         }
     });
-
     document.getElementById('result').innerHTML = "";
+    document.getElementById('result').style.color = "white";
 }
 
 function resetClick() {
@@ -57,8 +57,8 @@ function visualValidation(inputElement) {
 }
 
 function visualError(inputElement) {
-    inputElement.style.backgroundColor = "red";
-    inputElement.style.color = "white";
+    inputElement.style.backgroundColor = "orange";
+    inputElement.style.color = "black";
 }
 
 function sinartisi(x, y) {
@@ -78,6 +78,7 @@ function checkInputValue(inputId, followUp, condition, errorText) {
     } else if (Number(inputElement.value) != 0 && terminal.style.display == 'table-row') {
         visualError(inputElement);
         result.innerHTML = errorText;
+        result.style.color = "orange";
     }
 }
 
@@ -105,4 +106,25 @@ function checkResults() {
     checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Έλεγξε τον υπολογισμό της συνάρτησης");
     checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>");
     checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>");
+
+    if (document.getElementById('b4').style.backgroundColor == 'green') {
+        var result = document.getElementById('result');
+        result.style.color = 'white';
+        result.innerHTML = `
+            <span style="color:#008CBA">----------------------<b>Σημείωση</b>---------------------</span><br>
+            Παρατηρήστε ότι οι μεταβλητές <b>α</b> και <b>β</b> του <br>
+            κυρίως προγράμματος δεν επηρεάστηκαν από το <br>
+            υποπρόγραμμα της Συνάρτησης που έδινε κάποιες <br>
+            νέες τιμές στα α και β όπου η ισχύς των τιμών <br>
+            αυτών, τελείωνε με την ολοκλήρωση εκτέλεσης <br>
+            της συνάρτησης. <br>
+            <br> Τα </b> πλεονεκτήματα </b> της περιορισμένης εμβέλειας <br>
+            είναι η απόλυτη αυτονομία όλων των <br>
+            υποπρογραμμάτων και η δυνατότητα να <br>
+            χρησιμοποιείται οποιοδήποτε όνομα, χωρίς να <br>
+            ενδιαφέρει αν το ίδιο χρησιμοποιείται σε <br>
+            άλλο υποπρόγραμμα. <br>
+        `;
+    }
+    
 }
