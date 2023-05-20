@@ -26,13 +26,12 @@ function showOnlyFirstCommand() {
 
     inputs.forEach(function (inputId) {
         resetInputElement(inputId);
+        if (inputId != 'a1') {
+            hideElementById('terminal' + inputId);
+        }
     });
-
-    for (var i = 2; i <= 9; i++) {
-        hideElementById('terminal' + i);
-    }
-
     document.getElementById('result').innerHTML = "";
+    document.getElementById('result').style.color = "white";
 }
 
 function resetClick() {
@@ -58,15 +57,29 @@ function visualValidation(inputElement) {
 }
 
 function visualError(inputElement) {
-    inputElement.style.backgroundColor = "red";
-    inputElement.style.color = "white";
+    inputElement.style.backgroundColor = "orange";
+    inputElement.style.color = "black";
 }
 
 function sinartisi(x, y) {
-    var a = 19;
-    var b = 3;
     var z = 2 * (x + y);
     return [x, y, z];
+}
+
+function checkInputValue(inputId, followUp, condition, errorText) {
+    var inputElement = document.getElementById(inputId);
+    var terminal = document.getElementById('terminal' + inputId);
+    var result = document.getElementById('result');
+
+    if (condition) {
+        showElementById('terminal' + followUp);
+        visualValidation(inputElement);
+        result.innerHTML = "";
+    } else if (Number(inputElement.value) != 0 && terminal.style.display == 'table-row') {
+        visualError(inputElement);
+        result.innerHTML = errorText;
+        result.style.color = "orange";
+    }
 }
 
 function checkResults() {
@@ -84,99 +97,34 @@ function checkResults() {
     var a4 = document.getElementById('a4');
     var b4 = document.getElementById('b4');
 
-    //check if the a1 is not 0 and if it is not 0 then show the terminal2
-    if (Number(a1.value) != 0) {
-        showElementById('terminal2');
-        visualValidation(a1);
-        document.getElementById('result').innerHTML = "";
-    } else {
-        visualError(a1);
-        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0";
-    }
+    checkInputValue('a1', 'b1', Number(a1.value) != 0, "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
+    checkInputValue('b1', 'a2', Number(b1.value) != 0 && b1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
+    checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
+    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
+    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Έλεγξε τον υπολογισμό της συνάρτησης");
+    checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>");
+    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>");
 
-    //check if the b1 is not 0 and if it is not 0 then show the terminal3
-    if (Number(b1.value) != 0 && b1.style.display != 'none') {
-        showElementById('terminal3');
-        visualValidation(b1);
-        document.getElementById('result').innerHTML = "";
-    } else if (Number(b1.value) != 0 && document.getElementById('terminal2').style.display == 'table-row') {
-        visualError(b1);
-        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0";
+    if (document.getElementById('b4').style.backgroundColor == 'green') {
+        var result = document.getElementById('result');
+        result.style.color = 'white';
+        result.innerHTML = `
+            <span style="color:#008CBA">----------------------<b>Σημείωση</b>---------------------</span><br>
+            Παρατηρήστε ότι οι μεταβλητές <b>α</b> και <b>β</b> του <br>
+            κυρίως προγράμματος δεν επηρεάστηκαν από το <br>
+            υποπρόγραμμα της Συνάρτησης που έδινε κάποιες <br>
+            νέες τιμές στα α και β όπου η ισχύς των τιμών <br>
+            αυτών, τελείωνε με την ολοκλήρωση εκτέλεσης <br>
+            της συνάρτησης. <br>
+            <br> Τα </b> πλεονεκτήματα </b> της περιορισμένης εμβέλειας <br>
+            είναι η απόλυτη αυτονομία όλων των <br>
+            υποπρογραμμάτων και η δυνατότητα να <br>
+            χρησιμοποιείται οποιοδήποτε όνομα, χωρίς να <br>
+            ενδιαφέρει αν το ίδιο χρησιμοποιείται σε <br>
+            άλλο υποπρόγραμμα. <br>
+        `;
     }
-
-    //check if the a2 is equal to a1 and if it is equal then show the terminal4
-    if (Number(a2.value) == Number(a1.value) && document.getElementById('terminal3').style.display == 'table-row') {
-        showElementById('terminal4');
-        visualValidation(a2);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(a2.value) != 0 && document.getElementById('terminal3').style.display == 'table-row') {
-        visualError(a2);
-        document.getElementById('result').innerHTML = "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα";
-    }
-
-    //check if the b2 is equal to b1 and if it is equal then show the terminal5
-    if (Number(b2.value) == Number(b1.value) && document.getElementById('terminal4') && Number(b1.value) != 0) {
-        showElementById('terminal5');
-        visualValidation(b2);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(b2.value) != 0 && document.getElementById('terminal4').style.display == 'table-row') {
-        visualError(b2);
-        document.getElementById('result').innerHTML = "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα";
-    }
-
-    //check if the a4 is equal to 19 and if it is equal then show the terminal6
-    if (Number(a3.value) == 19 && document.getElementById('terminal5').style.display == 'table-row') {
-        showElementById('terminal6');
-        visualValidation(a3);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(a3.value) != 0 && document.getElementById('terminal5').style.display == 'table-row') {
-        visualError(a3);
-        document.getElementById('result').innerHTML = "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>";
-    }
-
-    //check if the b3 is equal to 3 and if it is equal then show the terminal7
-    if (Number(b3.value) == 3 && document.getElementById('terminal6').style.display == 'table-row') {
-        showElementById('terminal7');
-        visualValidation(b3);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(b3.value) != 0 && document.getElementById('terminal6').style.display == 'table-row') {
-        visualError(b3);
-        document.getElementById('result').innerHTML = "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>";
-    }
-
-    //check if the s1 is equal to (a1+b1)*2 and if it is equal then show the terminal8
-    if (Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminal7').style.display == 'table-row') {
-        showElementById('terminal8');
-        visualValidation(s1);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(s1.value) != 0 && document.getElementById('terminal7').style.display == 'table-row') {
-        visualError(s1);
-        document.getElementById('result').innerHTML = "Έλεγξε τον υπολογισμό της συνάρτησης";
-    }
-
-    //check if the a4 is equal to a1 and if it is equal then show the terminal9
-    if (Number(a4.value) == Number(a1.value) && document.getElementById('terminal8').style.display == 'table-row') {
-        showElementById('terminal9');
-        visualValidation(a4);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(a4.value) != 0 && document.getElementById('terminal8').style.display == 'table-row') {
-        visualError(a4);
-        document.getElementById('result').innerHTML = "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>";
-    }
-
-    //check if the b4 is equal to b1
-    if (Number(b4.value) == Number(b1.value) && document.getElementById('terminal9').style.display == 'table-row') {
-        visualValidation(b4);
-        document.getElementById('result').innerHTML = "";
-    }
-    else if (Number(b4.value) != 0 && document.getElementById('terminal9').style.display == 'table-row') {
-        visualError(b4);
-        document.getElementById('result').innerHTML = "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>";
-    }
+    
 }
