@@ -26,11 +26,13 @@
 
 .comment {
     font-style: italic, oblique;
+    font-weight: bold;
     color: #2da146;
 }
 
 .command {
-    font-style: oblique;
+    font-style: normal, oblique;
+    font-weight: bold;
     color: #076fac;
 }
 

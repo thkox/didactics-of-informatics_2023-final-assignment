@@ -31,6 +31,8 @@ function showOnlyFirstCommand() {
     for (var i = 2; i <= 9; i++) {
         hideElementById('terminal' + i);
     }
+
+    document.getElementById('result').innerHTML = "";
 }
 
 function resetClick() {
@@ -80,98 +82,101 @@ function checkResults() {
     var s1 = document.getElementById('s1');
 
     var a4 = document.getElementById('a4');
-    var b4 = document.getElementById('b4'); 
-
-
-    //print the a1 to the p with id result
-    document.getElementById('result').innerHTML = Number(a1.value);
+    var b4 = document.getElementById('b4');
 
     //check if the a1 is not 0 and if it is not 0 then show the terminal2
     if (Number(a1.value) != 0) {
         showElementById('terminal2');
         visualValidation(a1);
+        document.getElementById('result').innerHTML = "";
     } else {
         visualError(a1);
-        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
+        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0";
     }
 
     //check if the b1 is not 0 and if it is not 0 then show the terminal3
     if (Number(b1.value) != 0 && b1.style.display != 'none') {
         showElementById('terminal3');
         visualValidation(b1);
+        document.getElementById('result').innerHTML = "";
     } else if (Number(b1.value) != 0 && document.getElementById('terminal2').style.display == 'table-row') {
         visualError(b1);
-        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν ακέραιο αριθμό εκτός του 0";
+        document.getElementById('result').innerHTML = "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0";
     }
 
     //check if the a2 is equal to a1 and if it is equal then show the terminal4
     if (Number(a2.value) == Number(a1.value) && document.getElementById('terminal3').style.display == 'table-row') {
         showElementById('terminal4');
         visualValidation(a2);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(a2.value) != 0 && document.getElementById('terminal3').style.display == 'table-row') {
         visualError(a2);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα";
     }
-
 
     //check if the b2 is equal to b1 and if it is equal then show the terminal5
     if (Number(b2.value) == Number(b1.value) && document.getElementById('terminal4') && Number(b1.value) != 0) {
         showElementById('terminal5');
         visualValidation(b2);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(b2.value) != 0 && document.getElementById('terminal4').style.display == 'table-row') {
         visualError(b2);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα";
     }
 
     //check if the a4 is equal to 19 and if it is equal then show the terminal6
     if (Number(a3.value) == 19 && document.getElementById('terminal5').style.display == 'table-row') {
         showElementById('terminal6');
         visualValidation(a3);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(a3.value) != 0 && document.getElementById('terminal5').style.display == 'table-row') {
         visualError(a3);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>";
     }
 
     //check if the b3 is equal to 3 and if it is equal then show the terminal7
     if (Number(b3.value) == 3 && document.getElementById('terminal6').style.display == 'table-row') {
         showElementById('terminal7');
         visualValidation(b3);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(b3.value) != 0 && document.getElementById('terminal6').style.display == 'table-row') {
         visualError(b3);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>";
     }
 
     //check if the s1 is equal to (a1+b1)*2 and if it is equal then show the terminal8
     if (Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminal7').style.display == 'table-row') {
         showElementById('terminal8');
         visualValidation(s1);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(s1.value) != 0 && document.getElementById('terminal7').style.display == 'table-row') {
         visualError(s1);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Έλεγξε τον υπολογισμό της συνάρτησης";
     }
 
     //check if the a4 is equal to a1 and if it is equal then show the terminal9
     if (Number(a4.value) == Number(a1.value) && document.getElementById('terminal8').style.display == 'table-row') {
         showElementById('terminal9');
         visualValidation(a4);
+        document.getElementById('result').innerHTML = "";
     }
     else if (Number(a4.value) != 0 && document.getElementById('terminal8').style.display == 'table-row') {
         visualError(a4);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>";
     }
-
 
     //check if the b4 is equal to b1
     if (Number(b4.value) == Number(b1.value) && document.getElementById('terminal9').style.display == 'table-row') {
         visualValidation(b4);
-    } 
+        document.getElementById('result').innerHTML = "";
+    }
     else if (Number(b4.value) != 0 && document.getElementById('terminal9').style.display == 'table-row') {
         visualError(b4);
-        document.getElementById('result').innerHTML = "Λάθος απάντηση";
+        document.getElementById('result').innerHTML = "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως πρόγραμμα<b>;</b>";
     }
 }
