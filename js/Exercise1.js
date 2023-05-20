@@ -175,5 +175,3 @@ function checkResults() {
         document.getElementById('result').innerHTML = "Λάθος απάντηση";
     }
 }
-
-
