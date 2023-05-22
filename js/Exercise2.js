@@ -104,8 +104,8 @@ function checkResults() {
     checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
     checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
     checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Έλεγξε τον υπολογισμό της συνάρτησης");
-    checkInputValue('a4', 'b4', Number(a4.value) == 15 && document.getElementById('terminala4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως<br>πρόγραμμα<b>;</b>");
-    checkInputValue('b4', 'result', Number(b4.value) == 30 && document.getElementById('terminalb4').style.display == 'table-row', "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκαν οι τιμές α και β στο κυρίως<br>πρόγραμμα<b>;</b>");
+    checkInputValue('a4', 'b4', Number(a4.value) == 15 && document.getElementById('terminala4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκε η τιμή του α στο κυρίως<br>πρόγραμμα<b>;</b>");
+    checkInputValue('b4', 'result', Number(b4.value) == 30 && document.getElementById('terminalb4').style.display == 'table-row', "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκε η τιμή του β στο κυρίως<br>πρόγραμμα<b>;</b>");
 
     if (document.getElementById('b4').style.backgroundColor == 'green') {
         var result = document.getElementById('result');

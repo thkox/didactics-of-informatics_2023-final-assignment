@@ -93,11 +93,11 @@ input[type=number] {
 
 .centered {
     outline: none;
-    transform: translate(-50%, -48%);
+    transform: translate(-50%, -46%);
     width: 80%;
     height: 200%;
     max-width: 800px;
-    max-height: 920px;
+    max-height: 950px;
 }
 
 .method-body {
