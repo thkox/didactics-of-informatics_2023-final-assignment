@@ -1,0 +1,119 @@
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row {
+    display: table-row;
+}
+
+.row.header {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.cell {
+    display: table-cell;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+#code-table tr td:nth-child(even) {
+    text-align: left;
+}
+
+.comment {
+    font-style: italic, oblique;
+    font-weight: bold;
+    color: #2da146;
+}
+
+.command {
+    font-style: normal, oblique;
+    font-weight: bold;
+    color: #076fac;
+}
+
+.container {
+    position: relative;
+    text-align: left;
+}
+
+#terminal-layout {
+    background-color: black;
+    color: white;
+}
+
+.terminal-buttons {
+    background-color: #008CBA;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    box-shadow: 0 5px #999;
+}
+
+.terminal-buttons:hover {
+    background-color: #0057ba;
+    color: white;
+}
+
+.terminal-buttons:active {
+    background-color: #3e718e;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    text-align: center;
+    max-width: 18px;
+}
+
+.centered {
+    outline: none;
+    transform: translate(-50%, -46%);
+    width: 80%;
+    height: 200%;
+    max-width: 800px;
+    max-height: 970px;
+}
+
+.method-body {
+    padding-inline-start: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .table {
+        display: block;
+    }
+
+    .row {
+        display: block;
+    }
+
+    .cell {
+        display: block;
+    }
+}
