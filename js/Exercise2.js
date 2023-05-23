@@ -111,7 +111,7 @@ function checkResults() {
         var result = document.getElementById('result');
         result.style.color = 'white';
         result.innerHTML = `
-            <span style="color:#008CBA"><b>Μπράβο! Ολοκλήρωσες σωστά την Δραστηριότητα</b></span><br>
+            <span style="color:#008CBA"><b>Μπράβο! <br> Ολοκλήρωσες σωστά την Δραστηριότητα</b></span><br><br>
             Πρόσεξε ότι στις γραμμές <b>14</b> και <b>15</b> <br>
             αλλάξαμε τις τιμές των <b>α</b> και <b>β</b> στο κυρίως<br>
             πρόγραμμα οπότε οι τελικές τιμές τους είναι<br>
