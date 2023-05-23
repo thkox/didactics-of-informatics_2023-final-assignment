@@ -101,17 +101,17 @@ function checkResults() {
     checkInputValue('b1', 'a2', Number(b1.value) != 0 && b1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
     checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
     checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
-    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
-    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Ξαναπροσπάθησε. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
-    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Έλεγξε τον υπολογισμό της συνάρτησης");
-    checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! <br> Επηρεάστηκε η τιμή του α στο κυρίως<br>πρόγραμμα<b>;</b>");
-    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Σχεδόν τελείωσες την άσκηση. Προσπάθησε ξανά! <br> Επηρεάστηκε η τιμή του β στο κυρίως<br> πρόγραμμα<b>;</b>");
+    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του α που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
+    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του β που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
+    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα.");
+    checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του α στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
+    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του β στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
 
     if (document.getElementById('b4').style.backgroundColor == 'green') {
         var result = document.getElementById('result');
         result.style.color = 'white';
         result.innerHTML = `
-            <span style="color:#008CBA">---------------------<b>Σημείωση</b>------------------</span><br>
+            <span style="color:#008CBA"><b>Μπράβο! Ολοκλήρωσες σωστά την Δραστηριότητα</b></span><br>
             Παρατηρήστε ότι οι μεταβλητές <b>α</b> και <b>β</b> του<br>
             κυρίως προγράμματος δεν επηρεάστηκαν <br>
             από το υποπρόγραμμα της <b>Συνάρτησης</b> <br>
@@ -122,9 +122,9 @@ function checkResults() {
             <br> Τα </b> πλεονεκτήματα </b> της περιορισμένης<br>
             εμβέλειας είναι η απόλυτη αυτονομία όλων<br>
             των υποπρογραμμάτων και η δυνατότητα να<br>
-            χρησιμοποιείται οποιοδήποτε όνομα, χωρίς<br>
-            να ενδιαφέρει αν το ίδιο χρησιμοποιείται<br>
-            σε άλλο υποπρόγραμμα. <br>
+            χρησιμοποιείται οποιοδήποτε όνομα μεταβλητής,<br>
+            χωρίς να ενδιαφέρει αν το ίδιο όνομα<br>
+            μεταβλητής χρησιμοποιείται σε άλλο υποπρόγραμμα. <br>
         `;
     }
     
