@@ -103,9 +103,9 @@ function checkResults() {
     checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
     checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του α που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
     checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του β που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
-    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα.");
+    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Προσπάθησε ξανά. <br> Υπολόγισε την τιμή της συνάρτησης<br>(γραμμές 22 και 27 του κώδικα)");
     checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του α στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
-    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του β στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
+    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος!<br>Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του β στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
 
     if (document.getElementById('b4').style.backgroundColor == 'green') {
         var result = document.getElementById('result');
