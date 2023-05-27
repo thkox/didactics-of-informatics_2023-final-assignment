@@ -93,7 +93,6 @@ input[type=number] {
 
 .centered {
     outline: none;
-    transform: translate(-50%, -47%);
     width: 80%;
     height: 200%;
     max-width: 800px;
@@ -107,18 +106,4 @@ input[type=number] {
 legend {
     font-weight: bold;
     font-size: 20px;
-}
-
-@media screen and (max-width: 600px) {
-    .table {
-        display: block;
-    }
-
-    .row {
-        display: block;
-    }
-
-    .cell {
-        display: block;
-    }
 }
