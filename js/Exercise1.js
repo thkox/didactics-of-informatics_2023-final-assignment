@@ -61,10 +61,6 @@ function visualError(inputElement) {
     inputElement.style.color = "black";
 }
 
-function sinartisi(x, y) {
-    var z = 2 * (x + y);
-    return [x, y, z];
-}
 
 function checkInputValue(inputId, followUp, condition, errorText) {
     var inputElement = document.getElementById(inputId);

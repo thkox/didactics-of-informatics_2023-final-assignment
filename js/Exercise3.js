@@ -61,13 +61,6 @@ function visualError(inputElement) {
     inputElement.style.color = "black";
 }
 
-function diadikasia(x, y, z) {
-    var x = x - y + z;
-    var y = x * y;
-    var z = z + 5;
-    var x = x + y;
-    return [x, y, z];
-}
 
 function checkInputValue(inputId, followUp, condition, errorText) {
     var inputElement = document.getElementById(inputId);
