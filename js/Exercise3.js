@@ -21,6 +21,20 @@ function resetInputElement(elementId) {
     }
 }
 
+function highlightLine(lineId) {
+    var line = document.getElementById(lineId);
+    if (line) {
+        line.style.backgroundColor = "#b9d6f2";
+    }
+}
+
+function unhighlightLine(lineId) {
+    var line = document.getElementById(lineId);
+    if (line) {
+        line.style.backgroundColor = "white";
+    }
+}
+
 function showOnlyFirstCommand() {
     var inputs = ['a1', 'b1', 'c1', 'a2', 'b2', 'c2', 'a3', 'b3', 'c3'];
 
@@ -46,6 +60,9 @@ function onPageLoad() {
 
     var checkButton = document.getElementById('check');
     checkButton.addEventListener('click', checkResults);
+
+    highlightLine('linea1');
+
 }
 
 window.addEventListener('load', onPageLoad);
@@ -69,6 +86,8 @@ function checkInputValue(inputId, followUp, condition, errorText) {
 
     if (condition) {
         showElementById('terminal' + followUp);
+        unhighlightLine('line' + inputId);
+        highlightLine('line' + followUp);
         visualValidation(inputElement);
         result.innerHTML = "";
     } else if (Number(inputElement.value) != 0 && terminal.style.display == 'table-row') {

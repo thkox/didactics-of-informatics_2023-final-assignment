@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Εμβέλεια μεταβλητών</title>
     <link rel="stylesheet" type="text/css" href="../css/Global.css">
-    <link rel="stylesheet" type="text/css" href="../css/Exercise.css"> 
+    <link rel="stylesheet" type="text/css" href="../css/Exercise.css">
     <script type="text/javascript" src="../js/Exercise3.js"></script>
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../images/icon_app.ico">
 </head>
+
 <body>
     <div class="centered">
         <h2>Δραστηριότητα 3:<br>Έλεγχος εμβέλειας μεταβλητών με διαδικασία</h2>
@@ -18,130 +20,138 @@
                 <div class="cell">Αναπαράσταση Eκτέλεσης Προγράμματος</div>
             </div>
             <div class="row">
-                <div class="cell">
-                        <table id="code-table">
-                            <tr>
-                                <th>Γραμμή</th>
-                                <th>Κώδικας</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td class="comment">! Πρόγραμμα 3 Eλέγχου εμβέλειας μεταβλητών</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><span class="command">ΠΡΟΓΡΑΜΜΑ</span> Εμβέλειαδιαδικασια</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td class="method-body"><span class="command"> ΠΡΑΓΜΑΤΙΚΕΣ</span>: α, β, γ</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><span class="command">ΑΡΧΗ</span></td>
-                            </tr>
-                            <tr id="line1">
-                                <td>6</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή α:'</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> α</td>
-                            </tr>
-                            <tr id="line2">
-                                <td>8</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή β:'</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> β</td>
-                            </tr>
-                            <tr id="line3">
-                                <td>10</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή γ:'</td>
-                            </tr>
-                            <tr>
-                                <td>11</td>
-                                <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> γ</td>
-                            </tr>
-                            <tr>
-                                <td>12</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της α είναι: ', α</td>
-                            </tr>
-                            <tr>
-                                <td>13</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της β είναι: ', β</td>
-                            </tr>
-                            <tr>
-                                <td>14</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της γ είναι: ', γ</td>
-                            </tr>
-                            <tr>
-                                <td>15</td>
-                                <td class="method-body"><span class="command">ΚΑΛΕΣΕ</span> διαδ (α,β,γ)</td>
-                            </tr>
-                            <tr>
-                                <td>16</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της α είναι: ', α</td>
-                            </tr>
-                            <tr>
-                                <td>17</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της β είναι: ', β</td>
-                            </tr>
-                            <tr>
-                                <td>18</td>
-                                <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της γ είναι: ', γ</td>
-                            </tr>
-                            <tr>
-                                <td>19</td>
-                                <td><span class="command">ΤΕΛΟΣ_ΠΡΟΓΡΑΜΜΑΤΟΣ</span> Εμβέλειαδιαδικασια</td>
-                            </tr>
-                            <tr>
-                                <td>20</td>
-                                <td><span class="comment">! ---------- ΔΙΑΔΙΚΑΣΙΑ ----------</span></td>
-                            </tr>
-                            <tr>
-                                <td>21</td>
-                                <td><span class="command">ΔΙΑΔΙΚΑΣΙΑ</span> διαδ (x, y, z)</td>
-                            </tr>
-                            <tr>
-                                <td>22</td>
-                                <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
-                            </tr>
-                            <tr>
-                                <td>23</td>
-                                <td class="method-body"><span class="command">ΠΡΑΓΜΑΤΙΚΕΣ:</span> x, y, z</td>
-                            </tr>
-                            <tr>
-                                <td>24</td>
-                                <td><span class="command">ΑΡΧΗ</span></td>
-                            </tr>
-                            <tr>
-                                <td>25</td>
-                                <td class="method-body">x &#60;-- x - y + z</td>
-                            </tr>
-                            <tr>
-                                <td>26</td>
-                                <td class="method-body">y &#60;-- x * y</td>
-                            </tr>
-                            <tr>
-                                <td>27</td>
-                                <td class="method-body">z &#60;-- z + 5</td>
-                            </tr>
-                            <tr>
-                                <td>28</td>
-                                <td><span class="command">ΤΕΛΟΣ_ΔΙΑΔΙΚΑΣΙΑΣ</span></td>
-                            </tr>                            
-                        </table>
+                <div class="cell code-cell">
+                    <table id="code-table">
+                        <tr>
+                            <th>Γραμμή</th>
+                            <th>Κώδικας</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td class="comment">! Πρόγραμμα 3 Eλέγχου εμβέλειας μεταβλητών</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="command">ΠΡΟΓΡΑΜΜΑ</span> Εμβέλειαδιαδικασια</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="method-body"><span class="command"> ΠΡΑΓΜΑΤΙΚΕΣ</span>: α, β, γ</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="command">ΑΡΧΗ</span></td>
+                        </tr>
+                        <tr id="linea1">
+                            <td>6</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή α:'</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> α</td>
+                        </tr>
+                        <tr id="lineb1">
+                            <td>8</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή β:'</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> β</td>
+                        </tr>
+                        <tr id="linec1">
+                            <td>10</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Δώσε τιμή στη μεταβλητή γ:'</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td class="method-body"><span class="command">ΔΙΑΒΑΣΕ</span> γ</td>
+                        </tr>
+                        <tr id="linea2">
+                            <td>12</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της α είναι: ', α
+                            </td>
+                        </tr>
+                        <tr id="lineb2">
+                            <td>13</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της β είναι: ', β
+                            </td>
+                        </tr>
+                        <tr id="linec2">
+                            <td>14</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η αρχική τιμή της γ είναι: ', γ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td class="method-body"><span class="command">ΚΑΛΕΣΕ</span> διαδ (α,β,γ)</td>
+                        </tr>
+                        <tr id="linea3">
+                            <td>16</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της α είναι: ', α
+                            </td>
+                        </tr>
+                        <tr id="lineb3">
+                            <td>17</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της β είναι: ', β
+                            </td>
+                        </tr>
+                        <tr id="linec3">
+                            <td>18</td>
+                            <td class="method-body"><span class="command">ΓΡΑΨΕ</span> 'Η τελική τιμή της γ είναι: ', γ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td><span class="command">ΤΕΛΟΣ_ΠΡΟΓΡΑΜΜΑΤΟΣ</span> Εμβέλειαδιαδικασια</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><span class="comment">! ---------- ΔΙΑΔΙΚΑΣΙΑ ----------</span></td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td><span class="command">ΔΙΑΔΙΚΑΣΙΑ</span> διαδ (x, y, z)</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td><span class="command">ΜΕΤΑΒΛΗΤΕΣ</span></td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td class="method-body"><span class="command">ΠΡΑΓΜΑΤΙΚΕΣ:</span> x, y, z</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td><span class="command">ΑΡΧΗ</span></td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td class="method-body">x &#60;-- x - y + z</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td class="method-body">y &#60;-- x * y</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td class="method-body">z &#60;-- z + 5</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td><span class="command">ΤΕΛΟΣ_ΔΙΑΔΙΚΑΣΙΑΣ</span></td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="cell" id="terminal-layout">
                     <div class="container">
                         <form id="form-values">
-                            <div style="text-align: center;"><input type="reset" class="terminal-buttons" id="reset" value="Καθαρισμός Πεδίων" > <input type="button" class="terminal-buttons" id="check" value="Έλεγχος"></div>
+                            <div style="text-align: center;"><input type="reset" class="terminal-buttons" id="reset"
+                                    value="Καθαρισμός Πεδίων"> <input type="button" class="terminal-buttons" id="check"
+                                    value="Έλεγχος"></div>
                             <br>
                             <fieldset>
                                 <legend>Terminal</legend>
@@ -150,37 +160,46 @@
                                         <td> </td>
                                     </tr>
                                     <tr id="terminala1">
-                                        <td colspan="4">Δώσε τιμή στη μεταβλητή α: <input class="input-value" type="number" id="a1"></td>
+                                        <td colspan="4">Δώσε τιμή στη μεταβλητή α: <input class="input-value"
+                                                type="number" id="a1"></td>
                                     </tr>
                                     <tr id="terminalb1">
-                                        <td colspan="4">Δώσε τιμή στη μεταβλητή β: <input class="input-value" type="number" id="b1"></td>
+                                        <td colspan="4">Δώσε τιμή στη μεταβλητή β: <input class="input-value"
+                                                type="number" id="b1"></td>
                                     </tr>
                                     <tr id="terminalc1">
-                                        <td colspan="4">Δώσε τιμή στη μεταβλητή γ: <input class="input-value" type="number" id="c1"></td>
+                                        <td colspan="4">Δώσε τιμή στη μεταβλητή γ: <input class="input-value"
+                                                type="number" id="c1"></td>
                                     </tr>
                                     <tr>
                                         <td> </td>
                                     </tr>
                                     <tr id="terminala2">
-                                        <td colspan="4">Η αρχική τιμή της α είναι: <input class="input-value" type="number" id="a2"></td>
+                                        <td colspan="4">Η αρχική τιμή της α είναι: <input class="input-value"
+                                                type="number" id="a2"></td>
                                     </tr>
                                     <tr id="terminalb2">
-                                        <td colspan="4">Η αρχική τιμή της β είναι: <input class="input-value" type="number" id="b2"></td>
+                                        <td colspan="4">Η αρχική τιμή της β είναι: <input class="input-value"
+                                                type="number" id="b2"></td>
                                     </tr>
                                     <tr id="terminalc2">
-                                        <td colspan="4">Η αρχική τιμή της γ είναι: <input class="input-value" type="number" id="c2"></td>
+                                        <td colspan="4">Η αρχική τιμή της γ είναι: <input class="input-value"
+                                                type="number" id="c2"></td>
                                     </tr>
                                     <tr>
                                         <td> </td>
                                     </tr>
                                     <tr id="terminala3">
-                                        <td colspan="4">Η τελική τιμή της μεταβλητής α: <input class="input-value" type="number" id="a3"></td>
+                                        <td colspan="4">Η τελική τιμή της μεταβλητής α: <input class="input-value"
+                                                type="number" id="a3"></td>
                                     </tr>
                                     <tr id="terminalb3">
-                                        <td colspan="4">Η τελική τιμή της μεταβλητής β: <input class="input-value" type="number" id="b3"></td>
+                                        <td colspan="4">Η τελική τιμή της μεταβλητής β: <input class="input-value"
+                                                type="number" id="b3"></td>
                                     </tr>
                                     <tr id="terminalc3">
-                                        <td colspan="4">Η τελική τιμή της μεταβλητής γ: <input class="input-value" type="number" id="c3"></td>
+                                        <td colspan="4">Η τελική τιμή της μεταβλητής γ: <input class="input-value"
+                                                type="number" id="c3"></td>
                                     </tr>
                                 </table>
                             </fieldset>
@@ -191,10 +210,12 @@
             </div>
         </div>
         <br>
-        <button class="back-button" type="button" onclick="window.location.href='Main.html'"><img src="../images/back.svg" alt="Back Icon" width="50" height="50"></button>
+        <button class="back-button" type="button" onclick="window.location.href='Main.html'"><img
+                src="../images/back.svg" alt="Back Icon" width="50" height="50"></button>
     </div>
     <div class="signature">
         <p>Created by: Theodoros Koxanoglou, Year: 2023</p>
     </div>
 </body>
+
 </html>

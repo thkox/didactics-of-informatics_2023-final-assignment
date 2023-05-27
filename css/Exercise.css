@@ -10,7 +10,8 @@
 
 .row.header {
     font-weight: bold;
-    background-color: #f2f2f2;
+    background-color: #006daa;
+    color: white;
 }
 
 .cell {
@@ -22,6 +23,14 @@
 
 #code-table tr td:nth-child(even) {
     text-align: left;
+}
+
+#code-table {
+    /* border-collapse: collapse; */
+}
+
+.code-cell {
+    background-color: aliceblue;
 }
 
 .comment {
