@@ -116,9 +116,9 @@ function checkResults() {
     checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
     checkInputValue('b2', 'c2', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
     checkInputValue('c2', 'a3', Number(c2.value) == Number(c1.value) && document.getElementById('terminalc2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
-    checkInputValue('a3', 'b3', Number(a3.value) == (Number(a2.value) - Number(b2.value) + Number(c2.value)) && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η Τελική τιμή της μεταβλητής α επιστρέφει<br>από τη διαδικασία με την παράμετρο x");
-    checkInputValue('b3', 'c3', Number(b3.value) == (Number(a3.value) * Number(b2.value)) && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής β επιστρέφει<br>από τη διαδικασία με την παράμετρο y");
-    checkInputValue('c3', 'result', Number(c3.value) == (Number(c2.value) + 5) && document.getElementById('terminalc3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής γ επιστρέφει<br>από τη διαδικασία με την παράμετρο z");
+    checkInputValue('a3', 'b3', Number(a3.value) == (Number(a2.value) - Number(b2.value) + Number(c2.value)) && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η Τελική τιμή της μεταβλητής <b>α</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>x</b>");
+    checkInputValue('b3', 'c3', Number(b3.value) == (Number(a3.value) * Number(b2.value)) && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής <b>β</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>y</b>");
+    checkInputValue('c3', 'result', Number(c3.value) == (Number(c2.value) + 5) && document.getElementById('terminalc3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής <b>γ</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>z</b>");
 
     if (document.getElementById('c3').style.backgroundColor == 'green') {
         var result = document.getElementById('result');
@@ -130,7 +130,7 @@ function checkResults() {
             προγράμματος. Στη Δραστηριότητα αυτή έγινε κλήση της <br>
             διαδικασίας με πέρασμα τιμών μέσω μιας λίστας παραμέτρων, <br>
             έγιναν υπολογισμοί και επέστρεψαν νέες τιμές στις <br>
-            μεταβλητές α, β, γ. <br>
+            μεταβλητές <b>α</b>, <b>β</b>, <b>γ</b>. <br>
 
         `;
     }
