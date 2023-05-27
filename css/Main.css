@@ -35,5 +35,71 @@
     width: 80%;
     height: 100%;
     max-width: 800px;
-    max-height: 500px;
+    max-height: 700px;
+}
+
+legend {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+fieldset {
+    border: 3px solid #0095f8;
+    border-radius: 8px;
+    padding: 10px;
+    margin: auto;
+    width: 80%;
+}
+
+.terminal-buttons {
+    background-color: #008CBA;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    box-shadow: 0 5px #999;
+}
+
+.terminal-buttons:hover {
+    background-color: #0057ba;
+    color: white;
+}
+
+.terminal-buttons:active {
+    background-color: #3e718e;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.row {
+    text-align: center;
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    border: 0px solid black;
+    padding: 5px;
+    text-align: center;
+}
+
+.cell-desc {
+    text-align: left;
+    font-weight: bold;
 }

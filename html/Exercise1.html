@@ -11,11 +11,11 @@
 <body>
     <div class="centered">
         <h1>Δραστηριότητα 1:<br>Έλεγχος εμβέλειας μεταβλητών συνάρτησης</h1>
-        <p>Συμπληρώστε τις πραγματικές τιμές των μεταβλητών, <b>εκτός του 0</b>, του παρακάτω terminal.<br>Μετά την συμπλήρωση κάθε πεδίου πατήστε το κουμπί "Έλεγχος" για επιβεβαίωση τιμής.</p>
+        <p>Συμπληρώστε τις πραγματικές τιμές των μεταβλητών, <b>εκτός του 0</b>, του παρακάτω terminal.<br></p>
         <div class="table">
             <div class="row header">
-                <div class="cell">ΓΛΩΣΣΑ</div>
-                <div class="cell">Εκτέλεση προγράμματος</div>
+                <div class="cell">Πηγαίος Κώδικας</div>
+                <div class="cell">Αναπαράσταση Eκτέλεσης Προγράμματος</div>
             </div>
             <div class="row">
                 <div class="cell">
@@ -90,7 +90,7 @@
                             </tr>
                             <tr>
                                 <td>17</td>
-                                <td><span class="comment">! ########## ΣΥΝΑΡΤΗΣΗ ##########</span></td>
+                                <td><span class="comment">! ---------- ΣΥΝΑΡΤΗΣΗ ----------</span></td>
                             </tr>
                             <tr>
                                 <td>18</td>
@@ -142,47 +142,49 @@
                 <div class="cell" id="terminal-layout">
                     <div class="container">
                         <form id="form-values">
-                            <table>
-                                <tr>
-                                    <th style="text-align: left;">Terminal <input type="reset" class="terminal-buttons" id="reset" value="Καθαρισμός Πεδίων" > <input type="button" class="terminal-buttons" id="check" value="Έλεγχος"></th>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                </tr>
-                                <tr id="terminala1">
-                                    <td colspan="4">Δώσε τιμή στη μεταβλητή α: <input class="input-value" type="number" id="a1"></td>
-                                </tr>
-                                <tr id="terminalb1">
-                                    <td colspan="4">Δώσε τιμή στη μεταβλητή β: <input class="input-value" type="number" id="b1"></td>
-                                </tr>
-                                <tr id="terminala2">
-                                    <td colspan="4">Η αρχική τιμή της α είναι: <input class="input-value" type="number" id="a2"></td>
-                                </tr>
-                                <tr id="terminalb2">
-                                    <td colspan="4">Η αρχική τιμή της β είναι: <input class="input-value" type="number" id="b2"></td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                </tr>
-                                <tr id="terminala3">
-                                    <td colspan="4">Η τιμή της α στη συνάρτηση: <input class="input-value" type="number" id="a3"></td>
-                                </tr>
-                                <tr id="terminalb3">
-                                    <td colspan="4">Η τιμή της β στη συνάρτηση: <input class="input-value" type="number" id="b3"></td>
-                                </tr>
-                                <tr>
-                                    <td> </td>
-                                </tr>
-                                <tr id="terminals1">
-                                    <td colspan="4">Η τιμή της συνάρτησης σ: <input class="input-value" type="number" id="s1"></td>
-                                </tr>
-                                <tr id="terminala4">
-                                    <td colspan="4">Η τελική τιμή της μεταβλητής α: <input class="input-value" type="number" id="a4"></td>
-                                </tr>
-                                <tr id="terminalb4">
-                                    <td colspan="4">Η τελική τιμή της μεταβλητής β: <input class="input-value" type="number" id="b4"></td>
-                                </tr>
-                            </table>
+                            <div style="text-align: center;"><input type="reset" class="terminal-buttons" id="reset" value="Καθαρισμός Πεδίων" > <input type="button" class="terminal-buttons" id="check" value="Έλεγχος"></div>
+                            <br>
+                            <fieldset>
+                                <legend>Terminal</legend>
+                                <table>
+                                    <tr>
+                                        <td> </td>
+                                    </tr>
+                                    <tr id="terminala1">
+                                        <td colspan="4">Δώσε τιμή στη μεταβλητή α: <input class="input-value" type="number" id="a1"></td>
+                                    </tr>
+                                    <tr id="terminalb1">
+                                        <td colspan="4">Δώσε τιμή στη μεταβλητή β: <input class="input-value" type="number" id="b1"></td>
+                                    </tr>
+                                    <tr id="terminala2">
+                                        <td colspan="4">Η αρχική τιμή της α είναι: <input class="input-value" type="number" id="a2"></td>
+                                    </tr>
+                                    <tr id="terminalb2">
+                                        <td colspan="4">Η αρχική τιμή της β είναι: <input class="input-value" type="number" id="b2"></td>
+                                    </tr>
+                                    <tr>
+                                        <td> </td>
+                                    </tr>
+                                    <tr id="terminala3">
+                                        <td colspan="4">Η τιμή της α στη συνάρτηση: <input class="input-value" type="number" id="a3"></td>
+                                    </tr>
+                                    <tr id="terminalb3">
+                                        <td colspan="4">Η τιμή της β στη συνάρτηση: <input class="input-value" type="number" id="b3"></td>
+                                    </tr>
+                                    <tr>
+                                        <td> </td>
+                                    </tr>
+                                    <tr id="terminals1">
+                                        <td colspan="4">Η τιμή της συνάρτησης σ: <input class="input-value" type="number" id="s1"></td>
+                                    </tr>
+                                    <tr id="terminala4">
+                                        <td colspan="4">Η τελική τιμή της μεταβλητής α: <input class="input-value" type="number" id="a4"></td>
+                                    </tr>
+                                    <tr id="terminalb4">
+                                        <td colspan="4">Η τελική τιμή της μεταβλητής β: <input class="input-value" type="number" id="b4"></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
                         </form>
                         <p id="result"></p>
                     </div>
