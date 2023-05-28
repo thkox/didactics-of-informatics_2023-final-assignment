@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Αρχική Σελίδα</title>
+    <title>Αρχική Σελίδα</title>
     <link rel="stylesheet" type="text/css" href="../css/Global.css">
     <link rel="stylesheet" type="text/css" href="../css/Main.css">
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="../images/icon_app.ico">
 </head>
+
 <body>
     <div class="centered">
         <h1>Εμβέλεια σταθερών-μεταβλητών <br> Τμηματικού Προγραμματισμού</h1>
         <br><br>
-        <div>
-            <button type="button" class="exercise-button" onclick="window.location.href='Exercise1.html'">Δραστηριότητα 1: <br> Εμβέλεια μεταβλητών συνάρτησης</button>
-            <br><br>
-            <button type="button" class="exercise-button" onclick="window.location.href='Exercise2.html'">Δραστηριότητα 2: <br> Εμβέλεια μεταβλητών κυρίως προγράμματος</button>
-        </div>
+        <fieldset>
+            <legend>Επεξήγηση Κουμπιών</legend>
+            <div class="row">
+                <div class="cell cell-button">
+                    <input type="reset" class="terminal-buttons" id="reset" value="Καθαρισμός Πεδίων">
+                </div>
+                <div class="cell cell-desc">
+                    Καθαρίζει τα πεδία και η δραστηριότητα ξεκινάει από την αρχή.
+                </div>
+            </div>
+            <div class="row">
+                <div class="cell cell-button">
+                    <input type="button" class="terminal-buttons" id="check" value="Έλεγχος">
+                </div>
+                <div class="cell cell-desc">
+                    Ελέγχει κάθε φορά την απάντηση του χρήστη.
+                </div>
+            </div>
+        </fieldset>
+        <h3>Επιλέξτε δραστηριότητα:</h2>
+            <div>
+                <button type="button" class="exercise-button"
+                    onclick="window.location.href='Exercise1.html'">Δραστηριότητα 1: <br> Εμβέλεια μεταβλητών
+                    συνάρτησης</button>
+                <br><br>
+                <button type="button" class="exercise-button"
+                    onclick="window.location.href='Exercise2.html'">Δραστηριότητα 2: <br> Εμβέλεια μεταβλητών κυρίως
+                    προγράμματος</button>
+                <br><br>
+                <button type="button" class="exercise-button"
+                    onclick="window.location.href='Exercise3.html'">Δραστηριότητα 3: <br> Εμβέλεια μεταβλητών
+                    διαδικασίας</button>
+                <br><br>
+            </div>
     </div>
     <div class="signature">
         <p>Created by: Theodoros Koxanoglou, Year: 2023</p>
     </div>
 </body>
+
 </html>

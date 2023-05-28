@@ -21,6 +21,20 @@ function resetInputElement(elementId) {
     }
 }
 
+function highlightLine(lineId) {
+    var line = document.getElementById(lineId);
+    if (line) {
+        line.style.backgroundColor = "#b9d6f2";
+    }
+}
+
+function unhighlightLine(lineId) {
+    var line = document.getElementById(lineId);
+    if (line) {
+        line.style.backgroundColor = "white";
+    }
+}
+
 function showOnlyFirstCommand() {
     var inputs = ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 's1', 'a4', 'b4'];
 
@@ -46,6 +60,8 @@ function onPageLoad() {
 
     var checkButton = document.getElementById('check');
     checkButton.addEventListener('click', checkResults);
+
+    highlightLine('linea1');
 }
 
 window.addEventListener('load', onPageLoad);
@@ -61,10 +77,6 @@ function visualError(inputElement) {
     inputElement.style.color = "black";
 }
 
-function sinartisi(x, y) {
-    var z = 2 * (x + y);
-    return [x, y, z];
-}
 
 function checkInputValue(inputId, followUp, condition, errorText) {
     var inputElement = document.getElementById(inputId);
@@ -73,6 +85,8 @@ function checkInputValue(inputId, followUp, condition, errorText) {
 
     if (condition) {
         showElementById('terminal' + followUp);
+        unhighlightLine('line' + inputId);
+        highlightLine('line' + followUp);
         visualValidation(inputElement);
         result.innerHTML = "";
     } else if (Number(inputElement.value) != 0 && terminal.style.display == 'table-row') {
@@ -99,19 +113,19 @@ function checkResults() {
 
     checkInputValue('a1', 'b1', Number(a1.value) != 0, "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
     checkInputValue('b1', 'a2', Number(b1.value) != 0 && b1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
-    checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Ζητείται η αρχική τιμή της μεταβλητής α.");
-    checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Ζητείται η αρχική τιμή της μεταβλητής β.");
-    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
-    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα<b>;</b>");
-    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Έλεγξε τον υπολογισμό της συνάρτησης");
-    checkInputValue('a4', 'b4', Number(a4.value) == 15 && document.getElementById('terminala4').style.display == 'table-row', "Επηρεάστηκε η τιμή του α<br>στο κυρίως πρόγραμμα<b>;</b>");
-    checkInputValue('b4', 'result', Number(b4.value) == 30 && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος! Προσπάθησε ξανά<br>αφού σκεφτείς ότι η τιμή δεν επηρεάστηκε<br>από τη συνάρτηση αλλά η τιμή της άλλαξε<br>στο κυρίως πρόγραμμα.");
+    checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η τιμή του <b>α</b> που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
+    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η τιμή του <b>β</b> που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
+    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Προσπάθησε ξανά. <br>Υπολόγισε την τιμή της συνάρτησης<br>(γραμμές 24 και 29 του κώδικα)");
+    checkInputValue('a4', 'b4', Number(a4.value) == 15 && document.getElementById('terminala4').style.display == 'table-row', "Προσπάθησε ξανά. <br> Έχει αλλάξει η τιμή του <b>α</b> στο κυρίως<br>πρόγραμμα");
+    checkInputValue('b4', 'result', Number(b4.value) == 30 && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος!<br>Προσπάθησε ξανά.<br> Έχει αλλάξει η τιμή του <b>β</b> στο κυρίως<br>πρόγραμμα");
 
     if (document.getElementById('b4').style.backgroundColor == 'green') {
         var result = document.getElementById('result');
         result.style.color = 'white';
         result.innerHTML = `
-            <span style="color:#008CBA">---<b>ΜΠΡΑΒΟ ολοκλήρωσες σωστά τη Δραστηριότητα!</b>---</span><br>
+            <span style="color:#008CBA"><b>Μπράβο! <br> Ολοκλήρωσες σωστά την Δραστηριότητα</b></span><br><br>
             Πρόσεξε ότι στις γραμμές <b>14</b> και <b>15</b> <br>
             αλλάξαμε τις τιμές των <b>α</b> και <b>β</b> στο κυρίως<br>
             πρόγραμμα οπότε οι τελικές τιμές τους είναι<br>
@@ -119,5 +133,4 @@ function checkResults() {
 
         `;
     }
-    
 }

@@ -10,7 +10,8 @@
 
 .row.header {
     font-weight: bold;
-    background-color: #f2f2f2;
+    background-color: #006daa;
+    color: white;
 }
 
 .cell {
@@ -22,6 +23,14 @@
 
 #code-table tr td:nth-child(even) {
     text-align: left;
+}
+
+#code-table {
+    /* border-collapse: collapse; */
+}
+
+.code-cell {
+    background-color: aliceblue;
 }
 
 .comment {
@@ -93,27 +102,17 @@ input[type=number] {
 
 .centered {
     outline: none;
-    transform: translate(-50%, -46%);
     width: 80%;
     height: 200%;
     max-width: 800px;
-    max-height: 950px;
+    max-height: 1100px;
 }
 
 .method-body {
     padding-inline-start: 20px;
 }
 
-@media screen and (max-width: 600px) {
-    .table {
-        display: block;
-    }
-
-    .row {
-        display: block;
-    }
-
-    .cell {
-        display: block;
-    }
+legend {
+    font-weight: bold;
+    font-size: 20px;
 }

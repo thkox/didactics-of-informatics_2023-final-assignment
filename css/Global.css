@@ -10,9 +10,12 @@ h1 {
 }
 
 .signature {
-    position:fixed; /* Position the element relative to the body */
-    bottom: 5px; /* Adjust the distance from the bottom */
-    right: 5px; /* Adjust the distance from the right */
+    position: fixed;
+    /* Position the element relative to the body */
+    bottom: 5px;
+    /* Adjust the distance from the bottom */
+    right: 5px;
+    /* Adjust the distance from the right */
 }
 
 .signature p {
@@ -31,10 +34,8 @@ div {
 .centered {
     border: 10px solid #006daa;
     padding: 10px;
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
     max-width: 800px;

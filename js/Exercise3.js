@@ -36,7 +36,7 @@ function unhighlightLine(lineId) {
 }
 
 function showOnlyFirstCommand() {
-    var inputs = ['a1', 'b1', 'a2', 'b2', 'a3', 'b3', 's1', 'a4', 'b4'];
+    var inputs = ['a1', 'b1', 'c1', 'a2', 'b2', 'c2', 'a3', 'b3', 'c3'];
 
     inputs.forEach(function (inputId) {
         resetInputElement(inputId);
@@ -62,6 +62,7 @@ function onPageLoad() {
     checkButton.addEventListener('click', checkResults);
 
     highlightLine('linea1');
+
 }
 
 window.addEventListener('load', onPageLoad);
@@ -99,47 +100,38 @@ function checkInputValue(inputId, followUp, condition, errorText) {
 function checkResults() {
     var a1 = document.getElementById('a1');
     var b1 = document.getElementById('b1');
+    var c1 = document.getElementById('c1');
 
     var a2 = document.getElementById('a2');
     var b2 = document.getElementById('b2');
+    var c2 = document.getElementById('c2');
 
     var a3 = document.getElementById('a3');
     var b3 = document.getElementById('b3');
-
-    var s1 = document.getElementById('s1');
-
-    var a4 = document.getElementById('a4');
-    var b4 = document.getElementById('b4');
+    var c3 = document.getElementById('c3');
 
     checkInputValue('a1', 'b1', Number(a1.value) != 0, "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
-    checkInputValue('b1', 'a2', Number(b1.value) != 0 && b1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
+    checkInputValue('b1', 'c1', Number(b1.value) != 0 && b1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
+    checkInputValue('c1', 'a2', Number(c1.value) != 0 && c1.style.display != 'none', "Συμπλήρωσε έναν πραγματικό αριθμό εκτός του 0");
     checkInputValue('a2', 'b2', Number(a2.value) == Number(a1.value) && document.getElementById('terminala2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
-    checkInputValue('b2', 'a3', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
-    checkInputValue('a3', 'b3', Number(a3.value) == 19 && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του <b>α</b> που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
-    checkInputValue('b3', 's1', Number(b3.value) == 3 && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η τιμή του <b>β</b> που σου ζητείται είναι στη<br>συνάρτηση και όχι στο κυρίως πρόγραμμα.");
-    checkInputValue('s1', 'a4', Number(s1.value) == (Number(a1.value) + Number(b1.value)) * 2 && document.getElementById('terminals1').style.display == 'table-row', "Προσπάθησε ξανά. <br> Υπολόγισε την τιμή της συνάρτησης<br>(γραμμές 22 και 27 του κώδικα)");
-    checkInputValue('a4', 'b4', Number(a4.value) == Number(a1.value) && document.getElementById('terminala4').style.display == 'table-row', "Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του <b>α</b> στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
-    checkInputValue('b4', 'result', Number(b4.value) == Number(b1.value) && document.getElementById('terminalb4').style.display == 'table-row', "Είσαι λίγο πριν το τέλος!<br>Προσπάθησε ξανά. <br> Επηρεάστηκε η τιμή του <b>β</b> στο κυρίως<br>πρόγραμμα από την συνάρτηση<b>;</b>");
+    checkInputValue('b2', 'c2', Number(b2.value) == Number(b1.value) && document.getElementById('terminalb2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('c2', 'a3', Number(c2.value) == Number(c1.value) && document.getElementById('terminalc2').style.display == 'table-row', "Προσπάθησε ξανά. <br> Βρίσκεσαι στο κυρίως πρόγραμμα");
+    checkInputValue('a3', 'b3', Number(a3.value) == (Number(a2.value) - Number(b2.value) + Number(c2.value)) && document.getElementById('terminala3').style.display == 'table-row', "Προσπάθησε ξανά. <br> Η Τελική τιμή της μεταβλητής <b>α</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>x</b>");
+    checkInputValue('b3', 'c3', Number(b3.value) == (Number(a3.value) * Number(b2.value)) && document.getElementById('terminalb3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής <b>β</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>y</b>");
+    checkInputValue('c3', 'result', Number(c3.value) == (Number(c2.value) + 5) && document.getElementById('terminalc3').style.display == 'table-row', "Προσπάθησε ξανά. <br>Η Τελική τιμή της μεταβλητής <b>γ</b> επιστρέφει<br>από τη διαδικασία με την παράμετρο <b>z</b>");
 
-    if (document.getElementById('b4').style.backgroundColor == 'green') {
+    if (document.getElementById('c3').style.backgroundColor == 'green') {
         var result = document.getElementById('result');
         result.style.color = 'white';
         result.innerHTML = `
             <span style="color:#008CBA"><b>Μπράβο! <br> Ολοκλήρωσες σωστά την Δραστηριότητα</b></span><br><br>
-            Παρατηρήστε ότι οι μεταβλητές <b>α</b> και <b>β</b> του<br>
-            κυρίως προγράμματος δεν επηρεάστηκαν <br>
-            από το υποπρόγραμμα της <b>Συνάρτησης</b> <br>
-            που έδινε κάποιες νέες τιμές στα <b>α</b> και </b>β</b> <br>
-            όπου η ισχύς των τιμών αυτών,<br>
-            τελείωνε με την ολοκλήρωση εκτέλεσης <br>
-            της συνάρτησης. <br>
-            <br> Τα </b> πλεονεκτήματα </b> της περιορισμένης<br>
-            εμβέλειας είναι η απόλυτη αυτονομία όλων<br>
-            των υποπρογραμμάτων και η δυνατότητα να<br>
-            χρησιμοποιείται οποιοδήποτε όνομα<br>
-            μεταβλητής, χωρίς να ενδιαφέρει αν το ίδιο<br>
-            όνομα μεταβλητής χρησιμοποιείται σε άλλο<br>
-            υποπρόγραμμα. <br>
+            Ενώ η λειτουργία των Συναρτήσεων είναι πιο περιορισμένη,<br>
+            η Διαδικασία είναι σαν μέρος λειτουργίας του κυρίως <br>
+            προγράμματος. Στη Δραστηριότητα αυτή έγινε κλήση της <br>
+            διαδικασίας με πέρασμα τιμών μέσω μιας λίστας παραμέτρων, <br>
+            έγιναν υπολογισμοί και επέστρεψαν νέες τιμές στις <br>
+            μεταβλητές <b>α</b>, <b>β</b>, <b>γ</b>. <br>
+
         `;
     }
 }
