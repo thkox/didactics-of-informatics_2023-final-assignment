@@ -42,7 +42,7 @@ This project is an individual assignment for the "Didactics of Informatics" cour
 
 ## Getting Started
 
-1. **To View the Web Application**: Navigate to the `web-app/` folder and open `index.html` in your web browser.
+1. **To View the Web Application**: Navigate to the `web-app/` folder and open `Start.html` in your web browser.
 2. **To Review Documentation**: All relevant documentation is located in the `docs/` folder, including the project description, presentation, and detailed documentation.
 
 ## License
