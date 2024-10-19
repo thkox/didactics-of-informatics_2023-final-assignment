@@ -5,8 +5,8 @@
 This project is an individual assignment for the "Didactics of Informatics" course, offered in the 3rd semester of the 2023 academic year at the University of Piraeus, Department of Informatics. The project consists of two main tasks: **Assignment A** and **Assignment B**.
 
 ## Course Information
-- **Institution:** University of Piraeus
-- **Department:** Department of Informatics
+- **Institution:** [University of Piraeus](https://www.unipi.gr/en/)
+- **Department:** [Department of Informatics](https://cs.unipi.gr/en/)
 - **Course:** Didactics of Informatics (2023)
 - **Semester:** 6th
 
